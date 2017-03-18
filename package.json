@@ -9,6 +9,7 @@
   "author": "nicolaslantez",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "mu2": "^0.5.21"
   }
 }

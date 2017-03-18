@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <!-- JQUERY -->
+  <script src="libs/jquery.min.js"></script>
+  <!-- BOOTSTRAP -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link href="css/newEntry.css" rel="stylesheet">
+  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="js/validaciones.js"></script>
+
+  <title>Nueva entrada</title>
+</head>
+<body>
+  <div class="panel panel-primary">
+     <div class="panel-heading">
+        <h1>
+           <p class="text-center">Nueva entrada</p>
+        </h1>
+     </div>
+     <div class="panel-body">
+        <form action="http://localhost:9000/addCliente" method="post">
+       <!-- <form> -->
+          <div class="form-group form-inline">
+              <div class="input-group-addon dateInLine">Fecha</div>
+              <input type="date" name="date" id="date">
+          </div>
+
+          <div class="form-group">
+              <div class="input-group col-xs-3">
+                <div class="input-group-addon">IssueID</div>
+                <input type="text" class="form-control" id="issueID" name="issueID" required="required">
+              </div>
+          </div>
+
+            <div class="form-group">
+               <div class="input-group col-xs-10">
+                  <div class="input-group-addon">Nombre de la Vulnerabilidad</div>
+                  <input type="text" class="form-control" id="vulnName" name="vulnName" required="required">
+               </div>
+            </div>
+
+            <div class="form-group form-inline">
+              <div class="input-group-addon dateInLine">Fecha de tratamiento</div>
+              <input type="date" name="reportedDate" id="reportedDate">
+            </div>
+
+            <div class="form-group">
+               <div class="input-group col-xs-5">
+                  <div class="input-group-addon">WebSec responsable</div>
+                  <select class="form-control" id="webSecSelect" name="webSecSelect">
+                     <option selected disabled></option>
+                     <option>Ale I</option>
+                     <option>Jona</option>
+                     <option>Agus</option>
+                     <option>Joaquin</option>
+                     <option>Ale P</option>
+                     <option>Nico</option>
+                  </select>
+              </div>
+            </div>
+
+             <div class="form-group">
+               <div class="input-group col-xs-5">
+                  <div class="input-group-addon">Desa responsable</div>
+                  <input type="text" class="form-control" id="desaResponsable" name="desaResponsable" required="required">
+               </div>
+            </div>
+
+             <div class="form-group">
+               <div class="input-group col-xs-5">
+                  <div class="input-group-addon">Desa proyecto</div>
+                  <input type="text" class="form-control" id="desaProyecto" name="desaProyecto" required="required">
+               </div>
+            </div>
+
+            <div class="form-group">
+               <div class="input-group col-xs-3">
+                  <div class="input-group-addon">Categoria</div>
+                  <select class="form-control" id="statusSelect" name="categoria">
+                     <option selected disabled></option>
+                     <option>Sin Respuesta</option>
+                     <option>Pendiente</option>
+                     <option>Resuelto</option>
+                  </select>
+              </div>
+            </div>
+
+             <div class="form-group form-inline" hidden="hidden" id="pingDayHidden">
+              <div class="input-group-addon dateInLine">Pendiente hasta</div>
+              <input type="date" name="pingDay" id="pingDay">
+            </div>
+
+
+
+            <div class="form-group">
+               <div class="input-group col-xs-7">
+                  <div class="input-group-addon">Comentarios</div>
+                  <textarea class="form-control" id="comments" name="comments" required="required"></textarea>
+               </div>
+            </div>
+
+           <button type="submit" class="btn btn-primary" onclick="submitForm()">Cargar</button>
+        </form>
+         </div>
+       <div class="text-center">
+               <a href="/">
+                   <button type="button" class="btn btn-default">
+                       <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+                          Volver
+                   </button>
+               </a>
+           </div>
+  </div>
+</body>
+</html>
