@@ -9,7 +9,10 @@
   "author": "nicolaslantez",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.17.1",
     "express": "^4.15.2",
-    "mu2": "^0.5.21"
+    "mongodb": "^2.2.25",
+    "mu2": "^0.5.21",
+    "mysql": "^2.13.0"
   }
 }

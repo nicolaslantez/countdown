@@ -13,7 +13,7 @@
   <!-- <link href="css/listadoClientes.css" rel="stylesheet"> -->
   <script src="js/bootstrap.min.js"></script>
   <!-- JAVASCRIPT -->
-  <!-- <script type="text/javascript" src="js/dataEntry.js"></script> -->
+  <script type="text/javascript" src="js/table.js"></script>
   <title>Vulns CountDown</title>
 </head>
 <body>
@@ -34,7 +34,7 @@
         </a> -->
      </div>
      <div class="panel-body">
-        <table id="clientes" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <table id="results" class="table table-striped table-bordered" cellspacing="0" width="100%">
              <thead>
               <tr>
                  <th>Fecha</th>
@@ -45,19 +45,23 @@
                  <th>Desa responsable</th>
                  <th>Desa proyecto</th>
                  <th>Estado</th>
-                 <th>Observacion</th>
+                 <th>Fecha estimada de resolucion</th>
               </tr>
            </thead>
            <tbody>
-              {{#clientes}}
+              {{#results}}
                     <tr>
-                        <td>{{IdCliente}}</td>
-                        <td>{{Apellido}}</td>
-                        <td>{{Nombre}}</td>
-                        <td>{{Categoria}}</td>
-                        <td>{{FechaNacimiento}}</td>
+                        <td>{{Date}}</td>
+                        <td>{{IssueID}}</td>
+                        <td>{{VulnName}}</td>
+                        <td>{{TreatmentDate}}</td>
+                        <td>{{WebSecResponsible}}</td>
+                        <td>{{DesaResponsible}}</td>
+                        <td>{{DesaProyect}}</td>
+                        <td>{{Status}}</td>
+                        <td>{{EstimatedDate}}</td>
                     </tr>  
-               {{/clientes}}
+               {{/results}}
             </tbody>
         </table>
      </div>
