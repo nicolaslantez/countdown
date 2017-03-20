@@ -9,6 +9,20 @@ var mongodb = require("mongodb");
 
 app.use(bodyParser.urlencoded());
 
+
+app.get('/login', function(req,res){
+	mu.clearCache();
+	fs.exists('index.html', function(exists){
+		if(exists) {
+			var stream = mu.compileAndRender('login.html');
+			stream.pipe(res);
+		} else {
+			res.writeHead(404);
+			res.end("No existe");
+		}
+	});
+});
+
 app.get('/',function(req,res){
 	var MongoClient = mongodb.MongoClient;
 	var url = 'mongodb://localhost:27017/countdownSite';
