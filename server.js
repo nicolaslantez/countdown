@@ -209,6 +209,7 @@ app.post('/editEntry', function(req,res){
 				"Comments" : req.body.Comments
 			}});
 			console.log("Entry updated");
+			res.redirect('/');
 		}
 		db.close();
 	});	
