@@ -10,6 +10,7 @@
   <script src="libs/dataTables.bootstrap.min.js"></script>
   <!-- BOOTSTRAP -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
   <script src="js/bootstrap.min.js"></script>
   <!-- JAVASCRIPT -->
   <script type="text/javascript" src="js/table.js"></script>
@@ -23,6 +24,10 @@
         </h1>
      </div>
      <div class="panelButtons">
+        <a class="btn icon-btn btn-success" href="/">
+           <span class="glyphicon btn-glyphicon glyphicon-home img-circle text-muted"></span>
+           Home
+        </a>
         <a class="btn icon-btn btn-warning" href="/newEntry">
            <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-warning"></span>
            Añadir
@@ -50,7 +55,7 @@
            </thead>
            <tbody>
               {{#results}}
-                    <tr>
+                    <tr class = "active clickable" data-href='/{{IssueID}}'>
                         <td>{{Date}}</td>
                         <td>{{IssueID}}</td>
                         <td>{{VulnName}}</td>
