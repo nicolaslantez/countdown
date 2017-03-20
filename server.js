@@ -174,7 +174,7 @@ app.post('/addEntry', function(req,res){
 			var date;
 			var date = (!req.body.EstimatedDate) ? date = null : date = new Date(req.body.EstimatedDate);
 			console.log(date);
-			var newEntry = {Date: req.body.Date, IssueID : req.body.IssueID, VulnName : req.body.VulnName, TreatmentDate : req.body.TreatmentDate, WebSecResponsible : req.body.WebSecResponsible, DesaResponsible : req.body.DesaResponsible, DesaProyect : req.body.DesaProyect, Status : req.body.Status, EstimatedDate : date, Comments : req.body.Comments};
+			var newEntry = {Date: req.body.Date, IssueID : req.body.IssueID, VulnName : req.body.VulnName, TreatmentDate : req.body.TreatmentDate, WebSecResponsible : req.body.WebSecResponsible, DesaResponsible : req.body.DesaResponsible, DesaProject : req.body.DesaProject, Status : req.body.Status, EstimatedDate : date, Comments : req.body.Comments};
 			collection.insert([newEntry], function(err, result){
 			if(err) {
 				console.log(err);
@@ -203,7 +203,7 @@ app.post('/editEntry', function(req,res){
 				"TreatmentDate" : req.body.TreatmentDate,
 				"WebSecResponsible" : req.body.WebSecResponsible,
 				"DesaResponsible" : req.body.DesaResponsible,
-				"DesaProyect" : req.body.DesaProyect,
+				"DesaProject" : req.body.DesaProject,
 				"Status" : req.body.Status,
 				"EstimatedDate" : req.body.EstimatedDate,
 				"Comments" : req.body.Comments
