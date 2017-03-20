@@ -173,7 +173,6 @@ app.post('/addEntry', function(req,res){
 			var collection = db.collection('entries');
 			var date;
 			var date = (!req.body.EstimatedDate) ? date = null : date = new Date(req.body.EstimatedDate);
-			console.log(date);
 			var newEntry = {Date: req.body.Date, IssueID : req.body.IssueID, VulnName : req.body.VulnName, TreatmentDate : req.body.TreatmentDate, WebSecResponsible : req.body.WebSecResponsible, DesaResponsible : req.body.DesaResponsible, DesaProject : req.body.DesaProject, Status : req.body.Status, EstimatedDate : date, Comments : req.body.Comments};
 			collection.insert([newEntry], function(err, result){
 			if(err) {
@@ -197,6 +196,8 @@ app.post('/editEntry', function(req,res){
 		} else {
 			console.log('Conection established');
 			var collection = db.collection('entries');
+			var date;
+			var date = (!req.body.EstimatedDate) ? date = null : date = new Date(req.body.EstimatedDate);
 			collection.update({IssueID : req.body.IssueID},{$set : {
 				"Date" : req.body.Date,
 				"VulnName" : req.body.VulnName,
@@ -205,7 +206,7 @@ app.post('/editEntry', function(req,res){
 				"DesaResponsible" : req.body.DesaResponsible,
 				"DesaProject" : req.body.DesaProject,
 				"Status" : req.body.Status,
-				"EstimatedDate" : req.body.EstimatedDate,
+				"EstimatedDate" : date,
 				"Comments" : req.body.Comments
 			}});
 			console.log("Entry updated");
